@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+
+<!--Name of the robot: kuka-->
+<robot name="kuka">
+    <!--First link: the base_link-->
+    <link name="base_link">
+        <!--Grahical shape -->
+        <visual>
+            <geometry>
+                <cylinder length="0.3" radius="0.15"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.15"/>
+            <material name="blue">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+        <!--Physical shape -->
+        <collision>
+            <geometry>
+                <cylinder length="0.3" radius="0.15"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.15"/>
+        </collision>
+    </link>
+
+    <!--Joint connecting the base_link with the arm1_link-->
+    <joint name="arm1_joint" type="revolute">
+        <parent link="base_link"/>
+        <child link="arm1_link"/>
+        <origin xyz="0 0 0.3"/>
+        <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    </joint>
+
+    <link name="arm1_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.4" radius="0.12"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            <material name="orange">
+                <color rgba="1 0.6 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="0.4" radius="0.12"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.2"/>
+        </collision>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+        </inertial>
+    </link>
+
+
+    <!--Joint connecting the link1 with the base_link-->
+    <joint name="arm2_joint" type="revolute">
+        <parent link="arm1_link"/>
+        <child link="arm2_link"/>
+        <origin xyz="0 0.1 0.4"/>
+        <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    </joint>
+
+    <link name="arm2_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+                <material name="orange">
+                    <color rgba="1 0.6 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            </collision>
+            <inertial>
+                <mass value="1"/>
+                <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+            </inertial>
+    </link>
+
+
+
+    <!--Joint connecting the link2 with the link3-->
+    <joint name="arm3_joint" type="revolute">
+        <parent link="arm2_link"/>
+        <child link="arm3_link"/>
+        <origin xyz="0 0 0.4"/>
+        <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    </joint>
+
+    <link name="arm3_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+                <material name="orange">
+                    <color rgba="1 0.6 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            </collision>
+            <inertial>
+                <mass value="1"/>
+                <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+            </inertial>
+    </link>
+
+
+
+    <!--Joint connecting the link3 with the link4-->
+    <joint name="arm4_joint" type="revolute">
+        <parent link="arm3_link"/>
+        <child link="arm4_link"/>
+        <origin xyz="0 -0.1 0.4"/>
+        <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    </joint>
+
+    <link name="arm4_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+                <material name="orange">
+                    <color rgba="1 0.6 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            </collision>
+            <inertial>
+                <mass value="1"/>
+                <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+            </inertial>
+    </link>
+
+
+    <!--Joint connecting the link4 with the link5-->
+    <joint name="arm5_joint" type="revolute">
+        <parent link="arm4_link"/>
+        <child link="arm5_link"/>
+        <origin xyz="0 0 0.4"/>
+        <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    </joint>
+
+    <link name="arm5_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+                <material name="orange">
+                    <color rgba="1 0.6 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            </collision>
+            <inertial>
+                <mass value="1"/>
+                <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+            </inertial>
+    </link>
+
+    <!--Joint connecting the link5 with the link6-->
+    <joint name="arm6_joint" type="revolute">
+        <parent link="arm5_link"/>
+        <child link="arm6_link"/>
+        <origin xyz="0 0.1 0.4"/>
+        <axis xyz="0 0 1" />
+        <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    </joint>
+
+    <link name="arm6_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+                <material name="orange">
+                    <color rgba="1 0.6 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.4" radius="0.12"/>
+                </geometry>
+                <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            </collision>
+            <inertial>
+                <mass value="1"/>
+                <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+            </inertial>
+    </link>
+
+</robot>
