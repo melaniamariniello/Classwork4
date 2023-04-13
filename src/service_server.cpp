@@ -21,7 +21,6 @@ bool service_callback( cwork4::tf_frame::Request &req, cwork4::tf_frame::Respons
             res.pose.orientation.y = transform.getRotation().y();
             res.pose.orientation.z = transform.getRotation().z();
             res.pose.orientation.w = transform.getRotation().w();
-            usleep(1000000);
         }
         catch (tf::TransformException ex){
             ROS_ERROR("%s",ex.what());

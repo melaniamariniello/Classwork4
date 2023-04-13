@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
 
 		tf::Quaternion q(srv.response.pose.orientation.x, srv.response.pose.orientation.y, srv.response.pose.orientation.z, srv.response.pose.orientation.w);
         transform.setOrigin(tf::Vector3(srv.response.pose.position.x, srv.response.pose.position.y, srv.response.pose.position.z));
+
         transform.setRotation(q);
 		br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), srv.request.frame_a.data, srv.request.frame_b.data));
 
